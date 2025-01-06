@@ -37,11 +37,12 @@ Here’s a breakdown of how the 3-tier AWS VPC architecture was created.
 - An **Internet Gateway** was attached to the VPC to provide internet connectivity for resources in public subnets.
 - **NAT Gateways** were deployed in the public subnets to enable secure internet access for private subnets. Allowing both application and database instances to download software updates and libraries from the internet.
 - **Route tables** were created and associated with the subnets:
+
   - Public subnets routed traffic directly through the Internet Gateway.
   - Private subnets routed outbound traffic through the NAT Gateways.
 
 - **Destroy the Infrastructure**:
-   - Clean up all resources created during the deployment.
+  - Clean up all resources created during the deployment.
 
 ---
 
@@ -56,27 +57,32 @@ The architecture for this Terraform project is illustrated below:
 ## **Usage**
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/bokal2/terraform-projects.git
-   cd terraform-projects/3-tier-architecture
+   git clone https://github.com/swaroopkrishna91/VPC-3-tier_architecture.git
+   cd VPC-3-tier_architecture
    ```
 
 2. Initialize Terraform:
+
    ```bash
    terraform init
    ```
 
 3. Plan the deployment:
+
    ```bash
    terraform plan
    ```
 
 4. Apply the configuration:
+
    ```bash
    terraform apply
    ```
 
 5. Verify the deployment:
+
    - Access AWS console and confirm if all the resources are created as expected.
 
 6. Destroy the resources when no longer needed:
